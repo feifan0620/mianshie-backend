@@ -1,72 +1,60 @@
-# 面试鹅
-***
+# 面试鹅 - 面试刷题平台
 
-## Table of Contents
+## 项目介绍
 
-- [About](#about)
-- [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-- [Usage](#usage)
-- [Built With](#built-with)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
+面试鹅是一个专注于帮助计算机专业的同学和程序员准备面试的在线刷题平台。提供丰富的题库（Java、前端、测试、运维等）以及详细的解答方案，帮助开发者提高技能并通过面试。
 
-## About
 
-MySpringBootApplication is a simple Spring Boot application that provides ... (describe the main features or purpose of your application).
+## 核心功能
 
-## Getting Started
+- **管理员功能**：
+  - 注册/登录账号
+  - 创建题库
+  - 创建题目
+  - 编写题解
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+- **用户功能**：
+  - 注册/登录账号
+  - 分词检索题目
+  - 在线刷题
+  - 查看刷题记录日历图
 
-What things you need to install the software and how to install them:
+## 技术栈
 
-- Java Development Kit (JDK)
-- Maven
-- Spring Boot
-- (Optional) Database (e.g., MySQL, PostgreSQL)
+- **后端**:
+  - Java Spring Boot 框架 + Maven 多模块构建
+  - MySQL 数据库 + MyBatis-Plus 框架 + MyBatis X
+  - Redis 分布式缓存 + Caffeine 本地缓存
+  - Redission 分布式锁 + BitMap + BloomFilter
+  - Elasticsearch 搜索引擎
+  - Druid 数据库连接池 + 并发编程
+  - Sa-Token 权限控制
+  - HotKey 热点探测
+  - Sentinel 流量控制
+  - Nacos 配置中心
 
-### Installation
 
-A step by step series of examples that tell you how to get a development env running:
+- **前端**:
+  - React 18 框架
+  - Next.js 服务端渲染
+  - Redux 状态管理
+  - Ant Design 组件库
+  - 富文本编辑器组件
+  - 前端工程化：ESLint + Prettier + TypeScript
+  - OpenAPI 前端代码生成
 
-1. Clone this repo to your local machine.
-2. Open the project in your IDE.
-3. Configure the application.properties file with your database settings.
-4. Run the application.
+## 贡献指南
 
-## Usage
+欢迎任何有助于改进面试鹅的贡献！请遵循以下步骤进行贡献：
 
-Instructions and examples for using the application.
+1. Fork 该项目。
+2. 创建一个新分支 (`git checkout -b feature/YourFeatureName`)。
+3. 提交更改 (`git commit -m 'Add some feature'`)。
+4. 将更改推送到分支 (`git push origin feature/YourFeatureName`)。
+5. 提交 Pull Request。
 
-## Built With
 
-- [Spring Boot](https://spring.io/projects/spring-boot) - The web framework used
-- [Maven](https://maven.apache.org/) - Dependency Management
-- [Thymeleaf](http://www.thymeleaf.org/) - Template engine used
-- [Lombok](https://projectlombok.org/) - To reduce boilerplate code
+## 致谢
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## License
-
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-Your Name - [yourwebsite](https://yourwebsite.com) - your@email.com
-
-Project Link: [https://github.com/yourusername/myspringbootapplication](https://github.com/yourusername/myspringbootapplication)
-
-## Acknowledgments
-
-- Hat tip to anyone who's code was used
-- Inspiration
-- etc.
+感谢所有为本项目做出贡献的人们！
