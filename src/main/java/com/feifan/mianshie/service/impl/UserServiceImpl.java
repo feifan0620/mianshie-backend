@@ -29,7 +29,7 @@ import org.springframework.util.DigestUtils;
 
 /**
  * 用户服务实现
- **/
+ */
 @Service
 @Slf4j
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {

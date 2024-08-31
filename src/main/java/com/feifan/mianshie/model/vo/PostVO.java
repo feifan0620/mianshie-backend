@@ -10,7 +10,7 @@ import org.springframework.beans.BeanUtils;
 
 /**
  * 帖子视图
- **/
+ */
 @Data
 public class PostVO implements Serializable {
 

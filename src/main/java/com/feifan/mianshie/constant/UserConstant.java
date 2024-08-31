@@ -2,7 +2,7 @@ package com.feifan.mianshie.constant;
 
 /**
  * 用户常量
- **/
+ */
 public interface UserConstant {
 
     /**

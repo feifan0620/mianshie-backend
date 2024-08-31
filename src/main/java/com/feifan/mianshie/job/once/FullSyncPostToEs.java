@@ -13,7 +13,7 @@ import org.springframework.boot.CommandLineRunner;
 
 /**
  * 全量同步帖子到 es
- **/
+ */
 // todo 取消注释开启任务
 //@Component
 @Slf4j

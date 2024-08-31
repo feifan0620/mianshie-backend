@@ -11,7 +11,10 @@ import lombok.Data;
 
 /**
  * 用户
- **/
+ *
+ * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
+ * @from <a href="https://yupi.icu">编程导航知识星球</a>
+ */
 @TableName(value = "user")
 @Data
 public class User implements Serializable {
@@ -61,6 +64,11 @@ public class User implements Serializable {
      * 用户角色：user/admin/ban
      */
     private String userRole;
+
+    /**
+     * 编辑时间
+     */
+    private Date editTime;
 
     /**
      * 创建时间

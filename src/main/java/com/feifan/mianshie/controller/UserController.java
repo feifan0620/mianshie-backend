@@ -44,7 +44,7 @@ import static com.feifan.mianshie.service.impl.UserServiceImpl.SALT;
 
 /**
  * 用户接口
- **/
+ */
 @RestController
 @RequestMapping("/user")
 @Slf4j

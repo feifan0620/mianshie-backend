@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 用户查询请求
- **/
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class UserQueryRequest extends PageRequest implements Serializable {

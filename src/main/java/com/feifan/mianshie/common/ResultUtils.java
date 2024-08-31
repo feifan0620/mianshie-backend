@@ -2,7 +2,7 @@ package com.feifan.mianshie.common;
 
 /**
  * 返回工具类
- **/
+ */
 public class ResultUtils {
 
     /**

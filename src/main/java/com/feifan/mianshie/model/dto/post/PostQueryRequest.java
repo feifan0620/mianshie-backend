@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 查询请求
- **/
+ */
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class PostQueryRequest extends PageRequest implements Serializable {

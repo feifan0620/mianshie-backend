@@ -6,7 +6,7 @@ import com.feifan.mianshie.model.entity.User;
 
 /**
  * 帖子点赞服务
- **/
+ */
 public interface PostThumbService extends IService<PostThumb> {
 
     /**

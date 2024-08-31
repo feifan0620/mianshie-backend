@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 创建${dataName}请求
- **/
+ */
 @Data
 public class ${upperDataKey}AddRequest implements Serializable {
 
