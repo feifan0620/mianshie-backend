@@ -34,6 +34,7 @@ public class QuestionBank implements Serializable {
      */
     private String picture;
 
+
     /**
      * 创建用户 id
      */
@@ -59,6 +60,7 @@ public class QuestionBank implements Serializable {
      */
     @TableLogic
     private Integer isDelete;
+
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

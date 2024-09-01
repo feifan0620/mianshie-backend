@@ -2,15 +2,15 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.QuestionBankQuestionMapper">
+<mapper namespace="com.feifan.mianshie.mapper.QuestionBankQuestionMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.QuestionBankQuestion">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="questionBankId" column="questionBankId" jdbcType="BIGINT"/>
-            <result property="questionId" column="questionId" jdbcType="BIGINT"/>
-            <result property="userId" column="userId" jdbcType="BIGINT"/>
-            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+    <resultMap id="BaseResultMap" type="com.feifan.mianshie.model.entity.QuestionBankQuestion">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="questionBankId" column="questionBankId" jdbcType="BIGINT"/>
+        <result property="questionId" column="questionId" jdbcType="BIGINT"/>
+        <result property="userId" column="userId" jdbcType="BIGINT"/>
+        <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">

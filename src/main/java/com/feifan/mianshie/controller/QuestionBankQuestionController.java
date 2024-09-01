@@ -1,5 +1,7 @@
 package com.feifan.mianshie.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.feifan.mianshie.annotation.AuthCheck;
 import com.feifan.mianshie.common.BaseResponse;
@@ -11,6 +13,7 @@ import com.feifan.mianshie.exception.BusinessException;
 import com.feifan.mianshie.exception.ThrowUtils;
 import com.feifan.mianshie.model.dto.questionBankQuestion.QuestionBankQuestionAddRequest;
 import com.feifan.mianshie.model.dto.questionBankQuestion.QuestionBankQuestionQueryRequest;
+import com.feifan.mianshie.model.dto.questionBankQuestion.QuestionBankQuestionRemoveRequest;
 import com.feifan.mianshie.model.dto.questionBankQuestion.QuestionBankQuestionUpdateRequest;
 import com.feifan.mianshie.model.entity.QuestionBankQuestion;
 import com.feifan.mianshie.model.entity.User;
@@ -200,4 +203,22 @@ public class QuestionBankQuestionController {
     }
 
     // endregion
+
+    /**
+     * 移除题库题目关联
+     *
+     * @param questionBankQuestionRemoveRequest
+     * @return
+     */
+    @PostMapping("/remove")
+    public BaseResponse<Boolean> removeQuestionBankQuestion(@RequestBody QuestionBankQuestionRemoveRequest questionBankQuestionRemoveRequest) {
+        ThrowUtils.throwIf(questionBankQuestionRemoveRequest == null, ErrorCode.PARAMS_ERROR);
+        Long questionId = questionBankQuestionRemoveRequest.getQuestionId();
+        Long questionBankId = questionBankQuestionRemoveRequest.getQuestionBankId();
+        LambdaQueryWrapper<QuestionBankQuestion> lambdaQueryWrapper = Wrappers.lambdaQuery(QuestionBankQuestion.class)
+                .eq(QuestionBankQuestion::getQuestionId, questionBankId)
+                .eq(QuestionBankQuestion::getQuestionId, questionId);
+        boolean result = questionBankQuestionService.remove(lambdaQueryWrapper);
+        return ResultUtils.success(result);
+    }
 }

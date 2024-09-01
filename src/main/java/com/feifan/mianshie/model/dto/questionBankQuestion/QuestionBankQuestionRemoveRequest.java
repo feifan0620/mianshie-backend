@@ -5,10 +5,10 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 创建题库题目关联请求
+ * 移除题库题目关联请求
  */
 @Data
-public class QuestionBankQuestionAddRequest implements Serializable {
+public class QuestionBankQuestionRemoveRequest implements Serializable {
 
     /**
      * 题库 id

@@ -10,8 +10,6 @@ import com.feifan.mianshie.exception.ThrowUtils;
 import com.feifan.mianshie.mapper.QuestionBankMapper;
 import com.feifan.mianshie.model.dto.questionBank.QuestionBankQueryRequest;
 import com.feifan.mianshie.model.entity.QuestionBank;
-import com.feifan.mianshie.model.entity.QuestionBankFavour;
-import com.feifan.mianshie.model.entity.QuestionBankThumb;
 import com.feifan.mianshie.model.entity.User;
 import com.feifan.mianshie.model.vo.QuestionBankVO;
 import com.feifan.mianshie.model.vo.UserVO;
@@ -25,7 +23,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -87,18 +84,23 @@ public class QuestionBankServiceImpl extends ServiceImpl<QuestionBankMapper, Que
         String sortField = questionBankQueryRequest.getSortField();
         String sortOrder = questionBankQueryRequest.getSortOrder();
         Long userId = questionBankQueryRequest.getUserId();
+        String description = questionBankQueryRequest.getDescription();
+        String picture = questionBankQueryRequest.getPicture();
+
         // todo 补充需要的查询条件
         // 从多字段中搜索
         if (StringUtils.isNotBlank(searchText)) {
             // 需要拼接查询条件
-            queryWrapper.and(qw -> qw.like("title", searchText).or().like("content", searchText));
+            queryWrapper.and(qw -> qw.like("title", searchText).or().like("description", searchText));
         }
         // 模糊查询
         queryWrapper.like(StringUtils.isNotBlank(title), "title", title);
+        queryWrapper.like(StringUtils.isNotBlank(description), "description", description);
         // 精确查询
         queryWrapper.ne(ObjectUtils.isNotEmpty(notId), "id", notId);
         queryWrapper.eq(ObjectUtils.isNotEmpty(id), "id", id);
         queryWrapper.eq(ObjectUtils.isNotEmpty(userId), "userId", userId);
+        queryWrapper.eq(ObjectUtils.isNotEmpty(picture), "picture", picture);
         // 排序规则
         queryWrapper.orderBy(SqlUtils.validSortField(sortField),
                 sortOrder.equals(CommonConstant.SORT_ORDER_ASC),
